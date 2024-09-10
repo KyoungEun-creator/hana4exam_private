@@ -1,0 +1,16 @@
+{
+  "name": "ex1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jo Kyoung Eun",
+  "license": "ISC",
+  "description": "hana4exam",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
