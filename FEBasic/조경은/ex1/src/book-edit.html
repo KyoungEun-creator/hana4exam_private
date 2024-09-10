@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookEdit</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+
+  <body>
+    <header class="flex justify-between items-center px-5 py-2 shadow-md">
+      <a href="index.html" class="bg-slate-100 px-5 py-2 rounded-lg text-green-500">
+        <i class="fa-solid fa-book-bookmark"></i>
+        <span class="text-lg font-extrabold">BookMark</span>
+      </a>
+      <div class="flex">
+        <a
+          href="https://github.com/KyoungEun-creator"
+          target="_blank"
+          class="pr-4 border-r-2 border-black"
+        >
+          <i class="fa-brands fa-github"></i>
+          Github
+        </a>
+        <div class="px-4 border-r-2 border-black">
+          <a href="./register.html">SignUp</a>
+        </div>
+        <div class="pl-4">
+          <a href="#">SignIn</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex">
+      <section class="bg-gray-200 w-64 m-2 p-2 rounded-md flex flex-col items-center">
+        <div class="w-full border border-sky-300 flex flex-col p-2">
+          <input
+            type="text"
+            placeholder="https://naver.com"
+            class="w-full px-3 py-2 mb-3 rounded"
+          />
+          <div class="mb-3">
+            <input type="checkbox" value="" id="autoDelete" />
+            <label class="cursor-pointer" for="autoDelete">이동 시 자동 삭제</label>
+          </div>
+
+          <div class="flex justify-end">
+            <button class="btn-edit">
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+
+            <button class="btn-edit bg-slate-300 ml-4">
+              <i class="fa-regular fa-floppy-disk"></i>
+            </button>
+          </div>
+        </div>
+        <div>There is no marks.</div>
+      </section>
+      <button class="btn-add"><i class="fa-solid fa-plus mr-2"></i>Add Book</button>
+    </main>
+
+    <footer class="border-t-2 border-gray-200 flex justify-center text-slate-400">
+      &copy; Hanaro 2024
+    </footer>
+  </body>
+</html>
