@@ -2,10 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn {
-    @apply rounded-md px-2 py-1 border border-spacing-1.5 hover:bg-slate-100 uppercase shadow-md focus:ring focus:ring-opacity-75;
+@layer base {
+  html {
+    @apply h-full m-0 p-0;
   }
+
+  body {
+    @apply flex flex-col h-screen m-0 p-0;
+  }
+
+  header,
+  footer {
+    @apply flex-shrink-0;
+  }
+
+  main {
+    @apply flex-grow;
+  }
+}
+
+@layer components {
   .btn-add {
     @apply rounded-md bg-blue-950 text-white mt-2 px-4 py-2 font-medium;
   }

@@ -12,32 +12,11 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../dist/output.css" />
-    <style>
-      html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-      }
-
-      header {
-        flex-shrink: 0;
-      }
-
-      main {
-        flex-grow: 1;
-      }
-    </style>
   </head>
 
   <body>
     <header class="flex justify-between items-center px-5 py-2 shadow-md">
-      <a href="/" class="bg-slate-100 px-5 py-2 rounded-lg text-green-500">
+      <a href="index.html" class="bg-slate-100 px-5 py-2 rounded-lg text-green-500">
         <i class="fa-solid fa-book-bookmark"></i>
         <span class="text-lg font-extrabold">BookMark</span>
       </a>
@@ -58,11 +37,12 @@
 
     <main class="flex">
       <section class="bg-gray-200 w-64 m-2 px-2 rounded-md flex flex-col items-end">
-        <h2 class="w-full font-extrabold text-xl px-3 pt-3 pb-1 truncate ...">
-          BookrMark BoorkMark BookrMark BoorkMark
-        </h2>
+        <div class="w-full flex justify-center px-3 pt-3 pb-1">
+          <h2 class="font-extrabold text-xl truncate ...">
+            BookrMark BoorkMark BookrMark BoorkMark
+          </h2>
+        </div>
 
-        <!-- indiflex -->
         <article
           class="border-2 border-white w-full h-20 flex justify-between items-center my-1 px-2 rounded"
         >
@@ -94,7 +74,6 @@
           </div>
         </article>
 
-        <!-- naver -->
         <article
           class="border-2 border-white w-full h-20 flex justify-between items-center my-1 px-2 rounded"
         >
@@ -110,7 +89,7 @@
             </div>
 
             <div class="flex flex-col w-2/3 mx-2">
-              <span class="font-semibold truncate ...">네이버</span>
+              <span class="font-semibold truncate ..." title="네이버">네이버</span>
               <span
                 class="text-xs text-slate-400 truncate ..."
                 title="네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요."
@@ -124,7 +103,6 @@
           </div>
         </article>
 
-        <!-- Kakao -->
         <article
           class="border-2 border-white w-full h-20 flex justify-between items-center my-1 px-2 rounded"
         >
@@ -140,7 +118,7 @@
             </div>
 
             <div class="flex flex-col w-2/3 mx-2">
-              <span class="font-semibold truncate ...">Kakao</span>
+              <span class="font-semibold truncate ..." title="Kakao">Kakao</span>
               <span
                 class="text-xs text-slate-400 truncate ..."
                 title="기술과 사람으로 더 나은 세상을 만듭니다."
@@ -154,7 +132,6 @@
           </div>
         </article>
 
-        <!-- YouTube -->
         <article
           class="border-2 border-white w-full h-20 flex justify-between items-center my-1 px-2 rounded"
         >
@@ -189,9 +166,10 @@
       </section>
 
       <section class="bg-gray-200 w-64 m-2 px-2 rounded-md flex flex-col items-end">
-        <h2 class="w-full font-extrabold text-xl px-3 pt-3 pb-1 truncate ...">Study</h2>
+        <div class="w-full flex justify-center px-3 pt-3 pb-1">
+          <h2 class="font-extrabold text-xl truncate ...">Study</h2>
+        </div>
 
-        <!-- Tailwind CSS -->
         <article
           class="border-2 border-white w-full h-20 flex justify-between items-center my-1 px-2 rounded"
         >
@@ -226,7 +204,6 @@
           </div>
         </article>
 
-        <!-- Next.js -->
         <article
           class="border-2 border-white w-full h-20 flex justify-between items-center my-1 px-2 rounded"
         >
