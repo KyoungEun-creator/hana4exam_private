@@ -1,6 +1,5 @@
 const assert = require("assert");
 require("./ex3");
-// h k l // b d s
 
 const hong = { id: 1, name: "Hong", city: "Busan", dept: 1 };
 const kim = { id: 2, name: "Kim", city: "Seoul", dept: 2 };
