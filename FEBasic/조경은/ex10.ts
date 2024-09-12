@@ -120,18 +120,16 @@ class ArrayList<T> extends Collection<T> {
   }
 
   clear(): void {
-    super.clear(); // Collection의 clear 메서드 사용
+    super.clear();
   }
 
-  // toString 메서드에서 중첩된 객체 구조를 반환
   toString(): any {
     return this.buildNestedObject(this.arr);
   }
 
-  // 배열을 중첩된 객체 구조로 변환하는 헬퍼 함수(마지막 rest 값을 제외)
   private buildNestedObject(arr: T[]): any {
     if (arr.length === 0) return undefined;
-    if (arr.length === 1) return { value: arr[0] }; // 마지막 요소는 rest를 포함하지 않음
+    if (arr.length === 1) return { value: arr[0] };
     return {
       value: arr[0],
       rest: this.buildNestedObject(arr.slice(1)),
@@ -140,7 +138,7 @@ class ArrayList<T> extends Collection<T> {
 
   *[Symbol.iterator](): Generator<T, void, unknown> {
     for (let i = 0; i < this.arr.length; i++) {
-      yield this.arr[i]; // 각 요소를 차례대로 반환
+      yield this.arr[i];
     }
   }
 }

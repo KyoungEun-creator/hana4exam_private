@@ -24,7 +24,6 @@ export async function getPosts(userId: number | string): Promise<TPostWithCommen
     posts.map(async (post: TPost) => {
       const commentsList = await fetch(`${POST_URL}/${post.id}/comments`);
       const commentsData = (await commentsList.json()) as TComment[];
-
       const comments = commentsData.map(({ postId, id, email, body }) => ({
         postId,
         id,
