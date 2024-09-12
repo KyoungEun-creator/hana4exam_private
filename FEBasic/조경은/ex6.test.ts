@@ -1,5 +1,5 @@
-import assert from 'assert';
-import { promiseAllSettled, randTime } from './ex6';
+import assert from "assert";
+import { promiseAllSettled, randTime } from "./ex6";
 
 (async function testNormal() {
   assert.deepStrictEqual(
@@ -10,15 +10,7 @@ import { promiseAllSettled, randTime } from './ex6';
 
 (async function testWithReject() {
   assert.deepStrictEqual(
-    await promiseAllSettled([
-      randTime(11),
-      Promise.reject('REJECT'),
-      randTime(33),
-    ]),
-    await Promise.allSettled([
-      randTime(11),
-      Promise.reject('REJECT'),
-      randTime(33),
-    ])
+    await promiseAllSettled([randTime(11), Promise.reject("REJECT"), randTime(33)]),
+    await Promise.allSettled([randTime(11), Promise.reject("REJECT"), randTime(33)])
   );
 })();

@@ -4,19 +4,81 @@ const MENU = {
   탕슉: { price: 25000, taxfree: 1 },
 };
 
-function bill(tableNo) {}
+const LABEL_SIZE = 6;
+const PRICE_SIZE = 7;
+
+function f(label, price) {
+  console.log(`${label.padEnd(LABEL_SIZE, " ")} ${priceFmt(price)}`);
+}
+
+function priceFmt(price, unit = "원") {
+  return price.toLocaleString().padStart(PRICE_SIZE, " ") + unit;
+}
+
+function printLine(line = "=") {
+  console.log(line.repeat(LABEL_SIZE * 2 + PRICE_SIZE + 2));
+}
+
+function calcTax(price) {
+  return Math.round((price / 1.1) * 0.1);
+}
+
+function bill(tableNo) {
+  const ordered = [];
+  const tot = { price: 0, tax: 0 };
+
+  return {
+    order(item) {
+      if (MENU[item]) {
+        ordered.push(item);
+        const { price, taxfree } = MENU[item];
+        tot.price += price;
+        tot.tax += taxfree ? 0 : calcTax(price);
+      }
+    },
+
+    printBill() {
+      if (ordered.length === 0) {
+        console.log(`\nTable. ${tableNo}`);
+        printLine();
+        console.log(`주문 내역이 없습니다.`);
+        return;
+      }
+
+      console.log(`\nTable. ${tableNo}`);
+      printLine();
+      for (const item of ordered) {
+        const { price, taxfree } = MENU[item];
+        console.log(`* ${item}`);
+        f("공급가액:", price);
+        f("부가세액:", taxfree ? 0 : calcTax(price));
+        printLine("-");
+      }
+      f("주문합계", tot.price);
+      f("주문합계", tot.tax);
+      printLine();
+    },
+  };
+}
 
 const table1 = bill(1);
-table1.order('짜장');
-table1.order('짬뽕');
+table1.order("짜장");
+table1.order("짬뽕");
 table1.printBill();
 
 const table2 = bill(2);
-table2.order('짜장');
+table2.order("짜장");
 table2.printBill();
 
-table1.order('탕슉');
+table1.order("탕슉");
 table1.printBill();
 
-table2.order('짬뽕');
+table2.order("짬뽕");
 table2.printBill();
+
+const table3 = bill(3);
+table3.order("유산슬");
+table3.printBill();
+
+table3.order("탕슉");
+table3.printBill();
