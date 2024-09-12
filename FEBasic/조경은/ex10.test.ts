@@ -14,7 +14,7 @@ assert.deepStrictEqual(alist.toString(), {
   value: 1,
   rest: { value: 5, rest: { value: 2, rest: { value: 3 } } },
 });
-alist.removeByValue(2);
+alist.remove(2);
 assert.deepStrictEqual(alist.toString(), {
   value: 1,
   rest: { value: 5, rest: { value: 3 } },

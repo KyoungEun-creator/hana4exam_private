@@ -29,7 +29,7 @@ export const throttle = (cb: TCb, delay: number) => {
 
 // test code
 const debo = debounce((a: number) => console.log(a + 1), 500);
-for (let i = 10; i < 15; i++) console.log(debo(i)); // 15 출력
+for (let i = 10; i < 15; i += 1) console.log(debo(i)); // 15 출력
 
 const thro = throttle((a: number) => console.log(a + 1), 500);
-for (let i = 10; i < 15; i++) console.log(thro(i)); // 11 출력
+for (let i = 10; i < 15; i += 1) console.log(thro(i)); // 11 출력
