@@ -4,11 +4,11 @@
 
 @layer base {
   html {
-    @apply h-full m-0 p-0;
+    @apply w-full h-full m-0 p-0 box-border;
   }
 
   body {
-    @apply flex flex-col h-screen m-0 p-0;
+    @apply flex flex-col w-screen h-screen m-0 p-0;
   }
 
   header,
@@ -17,7 +17,11 @@
   }
 
   main {
-    @apply flex-grow;
+    @apply flex-grow flex;
+  }
+
+  section {
+    @apply w-1/2;
   }
 }
 

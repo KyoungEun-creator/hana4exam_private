@@ -36,7 +36,7 @@ assert.deepStrictEqual(alist.toString(), {
   rest: { value: 300, rest: { value: 22, rest: { value: 5, rest: { value: 3 } } } },
 });
 assert.deepStrictEqual(alist.get(2), 22);
-assert.deepStrictEqual(alist.size, 5);
+assert.deepStrictEqual(alist.size(), 5);
 assert.deepStrictEqual(alist.indexOf(300), 1);
 assert.deepStrictEqual(alist.contains(300), true);
 assert.deepStrictEqual(alist.contains(301), false);

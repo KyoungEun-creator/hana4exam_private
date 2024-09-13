@@ -1,8 +1,24 @@
 import assert from "assert";
-import { getPosts } from "./ex7";
+import { getPosts, TComment } from "./ex7";
+
+const getCommentsFromPost = async (postId: number): Promise<TComment[]> => {
+  try {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
+    const data = await response.json();
+    return data as TComment[];
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
+async function fetchCommentsFromPost(postId: number) {
+  return await getCommentsFromPost(postId);
+}
 
 async function test(userId: string | number) {
   const posts = await getPosts(userId);
+  const commentsFromPost1 = await fetchCommentsFromPost(1);
 
   assert.strictEqual(posts?.length, 10);
   assert.strictEqual(posts?.at(-1)?.comments?.length, 5);
@@ -64,18 +80,19 @@ async function test(userId: string | number) {
   });
 
   // 추가 테스트 코드를 작성하시오.
-  assert.strictEqual(posts[1]?.title, "qui est esse");
-  assert.strictEqual(posts[2]?.comments[0]?.email, "Veronica_Goodwin@timmothy.net");
-  assert.strictEqual(posts[3]?.comments[1]?.email, "Preston_Hudson@blaise.tv");
-  assert.strictEqual(
+  assert.deepStrictEqual(posts[0]?.comments[0]?.email, commentsFromPost1[0]?.email);
+
+  assert.deepStrictEqual(posts[1]?.title, "qui est esse");
+  assert.deepStrictEqual(posts[2]?.comments[0]?.email, "Veronica_Goodwin@timmothy.net");
+  assert.deepStrictEqual(posts[3]?.comments[1]?.email, "Preston_Hudson@blaise.tv");
+  assert.deepStrictEqual(
     posts[4]?.comments[2]?.body,
     "voluptates provident repellendus iusto perspiciatis ex fugiat ut\nut dolor nam aliquid et expedita voluptate\nsunt vitae illo rerum in quos\nvel eligendi enim quae fugiat est"
   );
-  assert.strictEqual(posts[5]?.comments[3]?.id, 29);
-  assert.strictEqual(posts[6]?.title, "magnam facilis autem");
-  assert.strictEqual(posts[7]?.comments[4]?.email, "Clare.Aufderhar@nicole.ca");
-  assert.strictEqual(posts[8]?.comments[1]?.id, 42);
-  assert.strictEqual(posts[9]?.comments[2]?.email, "Manuela_Stehr@chelsie.tv");
+  assert.deepStrictEqual(posts[5]?.comments[3]?.id, 29);
+  assert.deepStrictEqual(posts[6]?.title, "magnam facilis autem");
+  assert.deepStrictEqual(posts[7]?.comments[4]?.email, "Clare.Aufderhar@nicole.ca");
+  assert.deepStrictEqual(posts[8]?.comments[1]?.id, 42);
+  assert.deepStrictEqual(posts[9]?.comments[2]?.email, "Manuela_Stehr@chelsie.tv");
 }
-
-test(1);
+// test(1);

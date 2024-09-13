@@ -103,7 +103,7 @@ class ArrayList<T> extends Collection<T> {
     return this.arr.includes(value);
   }
 
-  get size(): number {
+  size(): number {
     return this.arr.length;
   }
 

@@ -5,13 +5,13 @@ type TPostWithComments = {
   title: string;
   comments: TComment[];
 };
-type TComment = {
+export type TComment = {
   postId: number;
   id: number;
   email: string;
   body: string;
 };
-type TPost = {
+export type TPost = {
   id: number;
   title: string;
 };
