@@ -95,4 +95,3 @@ async function test(userId: string | number) {
   assert.deepStrictEqual(posts[8]?.comments[1]?.id, 42);
   assert.deepStrictEqual(posts[9]?.comments[2]?.email, "Manuela_Stehr@chelsie.tv");
 }
-// test(1);
