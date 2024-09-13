@@ -1,6 +1,6 @@
 type TCb = (i: number) => void;
 
-const debounce = (cb: TCb, delay: number) => {
+export const debounce = (cb: TCb, delay: number) => {
   let timer: ReturnType<typeof setTimeout> | null = null;
   return (i: number) => {
     if (timer) clearTimeout(timer);
@@ -8,7 +8,7 @@ const debounce = (cb: TCb, delay: number) => {
   };
 };
 
-const throttle = (cb: TCb, delay: number) => {
+export const throttle = (cb: TCb, delay: number) => {
   let timer: ReturnType<typeof setTimeout> | null = null;
   return (i: number) => {
     if (timer) return;
@@ -25,5 +25,3 @@ for (let i = 10; i < 15; i++) debo(i); // 15 출력
 
 const thro = throttle((a: number) => console.log(a + 1), 500);
 for (let i = 10; i < 15; i++) thro(i); // 11 출력
-
-export { debounce, throttle };

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply w-full h-full m-0 p-0 box-border;
+  * {
+    box-sizing: border-box;
   }
 
   body {
@@ -17,19 +17,24 @@
   }
 
   main {
-    @apply flex-grow flex;
-  }
-
-  section {
-    @apply w-1/2;
+    @apply w-screen flex-grow flex;
   }
 }
 
 @layer components {
+  .input-text {
+    @apply border w-full px-3 py-2 rounded focus:outline-green-500;
+  }
   .btn-add {
-    @apply rounded-md bg-blue-950 text-white h-10 mt-2 px-4 py-2 font-medium;
+    @apply rounded-md bg-blue-950 text-white h-10 mt-2 px-4 py-2 font-medium hover:bg-green-500;
   }
   .btn-edit {
     @apply bg-white text-black px-4 py-1 rounded-md;
+  }
+  .section-bookmark {
+    @apply bg-gray-200 m-2 w-96 px-2 rounded-md flex flex-col items-end box-border;
+  }
+  .article-bookmark {
+    @apply box-border border-2 border-white w-full h-20 flex justify-between items-center my-1 px-2 rounded;
   }
 }
